@@ -62,6 +62,28 @@ This project was developed to create a professional online presence for **SB Con
 * Google Maps integration
 * WhatsApp quick contact
 
+## 🌐 Deployment to Render
+
+To deploy this fullstack website to Render (free tier):
+
+1. **MongoDB Database Setup:**
+   - Create a free cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+   - Obtain your MongoDB connection string (e.g., `mongodb+srv://<username>:<password>@cluster0.xxxx.mongodb.net/sb-construction?retryWrites=true&w=majority`).
+
+2. **Deploy on Render:**
+   - Create a new **Web Service** on Render and link your GitHub repository `SB-CONSTRUCTION-WEBSITE`.
+   - Set the configuration as follows:
+     - **Root Directory:** `backend`
+     - **Runtime:** `Node`
+     - **Build Command:** `npm install`
+     - **Start Command:** `node server.js`
+   - In the **Environment Variables** section, add:
+     - `MONGODB_URI`: *Your MongoDB Atlas connection string*
+     - `PORT`: `10000` (Render will assign this automatically)
+   - Click **Deploy Web Service**. Once built, the backend will serve both the static web pages and handle the database operations on the generated Render subdomain.
+
+---
+
 ## 👨‍💻 Author
 
 **Sachin Naik**
@@ -71,3 +93,4 @@ GitHub: https://github.com/ssachinnaik
 ---
 
 ⭐ If you found this project helpful, consider giving it a **Star** on GitHub.
+
