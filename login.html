@@ -64,7 +64,11 @@
             }
 
             try {
-                const response = await fetch('http://localhost:3000/leads', {
+                const apiUrl = window.location.hostname === '' || window.location.protocol === 'file:'
+                    ? 'http://localhost:3000/leads'
+                    : '/leads';
+
+                const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
